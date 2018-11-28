@@ -1,0 +1,15 @@
+*laravel installation
+*auth
+*miidleware(keyword) - display "admin" page only to admin(requires login and needs to be admin)
+*admin dashboard
+*new project - insert form
+*projects - list | listing all projects
+*project update | updating existing projects
+*delete
+*ajax pagination - ajax pagination for projects list
+*multi delete
+*created resource controller, model, miration file for tasks
+*tasks insert
+
+*learning
+*autocomplete
