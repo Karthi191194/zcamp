@@ -8,8 +8,42 @@
 *delete
 *ajax pagination - ajax pagination for projects list
 *multi delete
-*created resource controller, model, miration file for tasks
+*created resource controller, model, migration file for tasks
 *tasks insert
+
+*eapi - ecommerce api(https://www.udemy.com/laravel-e-commerce-restful-api/learn/v4/t/lecture/8890480?start=0)
+-php artisan make:model eapi_model/Product -a - creates model, factory, migration, resource controller
+-php artisan make:model eapi_model/Review -a
+-route  api.php -21,22,25
+-products table column creation | reviews table column creation | php artisan migrate - migrate both the tables
+-faker setup for products, reviews | database seeder |  php artisan db:seed
+-relationship Product, Reviews model
+-tinker: php artisan tinker | App\eapi_model\Product::find(4) |
+App\eapi_model\Product::find(4)->reviews - get reviews of product id 4
+App\eapi_model\Review::find(4)->products - get product of review id
+-API resource/transformer - When building an API, you may need a transformation layer that sits between your Eloquent models and the JSON responses that are actually returned to your application's users.
+(the api will show the column name in reponse of each, if we change these column names on future the api will break so we are using transformers)
+ php artisan make:resource Product/ProductCollection - resource collection
+ php artisan make:resource Product/ProductResource - resource
 
 *learning
 *autocomplete
+
+RELATIONSHIP
+*One To One : product model - rel_reviews method, rel_products method.
+
+
+*gallery
+- created model, migration, controller files files php artisan migrate -mcr
+
+
+*custom facades
+eg:(default) cache::get()
+flow 1.illuminate/support/facades/cache.php - facade
+thn 3.illuminate/cache/cachemanager.php - class
+thn 2.illuminate/cache/cacheserviceprovider
+eg:(custom facade ours)
+custom facades #1 - creating a class
+custom facades #2  - exending facade
+custom facades #3  - create a new file in the PROVIDERS folder.
+custom facades #4  - add newly ceated provider and facade

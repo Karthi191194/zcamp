@@ -58,3 +58,17 @@ Route::post('task-insert', 'TaskController@store');
 
 Route::get('autocomplete', 'ProjectsController@autocomplete'); //http://localhost/zcamp/public/autocomplete
 Route::post('autocomplete-fetch', 'ProjectsController@autocompletefetch');
+
+//eapi
+
+//custom facades
+//http://localhost/zcamp/public/customfacadetest
+//use App\CustomFacade;
+
+Route::get('customfacadetest', function(){
+    //normal way
+   // $customfacade = new CustomFacade();
+    //return $customfacade->getName();
+    //custom facade
+    return CustomFacade::getName();
+});

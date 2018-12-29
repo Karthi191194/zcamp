@@ -135,7 +135,7 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
-
+   // custom facades #4
     'providers' => [
 
         /*
@@ -166,6 +166,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
 
 
+
         /*
          * Package Service Providers...
          */
@@ -178,6 +179,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\CustomFacadeServiceProvider::class,
 
     ],
 
@@ -228,7 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
 'Form' => Collective\Html\FormFacade::class,
 'Html' => Collective\Html\HtmlFacade::class,
-
+        'CustomFacade' => App\Facades\CustomFacade::class,
 
     ],
 
