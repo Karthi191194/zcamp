@@ -25,3 +25,7 @@ Route::apiResource('/products', 'ProductController');
 Route::group(['prefix' => 'products'], function(){
     Route::apiResource('/{product}/reviews', 'ReviewController');
 });
+
+Route::get('/aaa', function(){
+   echo Route('reviews.index', 4);
+});

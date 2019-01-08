@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\eapi_model\Product;
 use App\Http\Resources\Product\ProductResource;
+use App\Http\Resources\Product\ProductCollection;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -17,7 +18,9 @@ class ProductController extends Controller
     {
         //eapi
         //API resource/transformer
-        return Product::all();
+        //return Product::all();
+        //return ProductResource::collection(Product::all());
+        return ProductCollection::collection(Product::all());
     }
 
     /**
@@ -52,7 +55,7 @@ class ProductController extends Controller
         //eapi
         //API resource/transformer
         //single product
-        //return $product; return default ouptut
+       // return $product; //return default ouptut
         return new ProductResource($product); // return resource output
     }
 

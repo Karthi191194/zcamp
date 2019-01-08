@@ -47,3 +47,6 @@ custom facades #1 - creating a class
 custom facades #2  - exending facade
 custom facades #3  - create a new file in the PROVIDERS folder.
 custom facades #4  - add newly ceated provider and facade
+
+
+*SERVICE PROVIDER

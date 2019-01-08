@@ -72,3 +72,6 @@ Route::get('customfacadetest', function(){
     //custom facade
     return CustomFacade::getName();
 });
+
+//SERVICE PROVIDER
+Route::get('numbers/{num}', 'ProjectsController@numbers')->middleware('auth.basic');

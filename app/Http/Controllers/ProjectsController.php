@@ -98,4 +98,9 @@ class ProjectsController extends Controller
        echo "<pre>"; print_r($a);
 
     }
+
+//SERVICE PROVIDER
+    public function numbers($param){
+        echo "Hi ".$param;
+    }
 }
