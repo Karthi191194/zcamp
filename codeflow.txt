@@ -50,3 +50,15 @@ custom facades #4  - add newly ceated provider and facade
 
 
 *SERVICE PROVIDER
+
+*Laravel JWT Authentication
+//JWT Method 1
+https://appdividend.com/2018/02/24/laravel-jwt-authentication-tutorial/
+1.install the third-party jwtauth package by typing the following command. composer require tymon/jwt-auth
+2.Update the config/app.php for JWT package
+3.php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\JWTAuthServiceProvider"
+-vendor:publish command used to copy few configuration file in your application from vendor package file
+4.php artisan jwt:generate
+5. register, login controller
+6. include route middleware - kernel.php
+7. routes in api.php

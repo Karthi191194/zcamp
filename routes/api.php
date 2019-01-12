@@ -29,3 +29,11 @@ Route::group(['prefix' => 'products'], function(){
 Route::get('/aaa', function(){
    echo Route('reviews.index', 4);
 });
+
+//JWT Method 1
+Route::post('jwtregister', 'JWTRegisterController@register');
+Route::post('jwtlogin', 'JWTLoginController@login');
+
+Route::middleware('jwt.auth')->get('users', function(Request $request) {
+    return auth()->user();
+});
