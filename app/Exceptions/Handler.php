@@ -4,7 +4,9 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-
+use Tymon\JWTAuth\Exceptions\TokenExpiredException ;
+use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+use Tymon\JWTAuth\Exceptions\JWTException ;
 class Handler extends ExceptionHandler
 {
     /**
@@ -47,7 +49,17 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception)
-    {
+    {   //JWT Method 2
+        //https://medium.com/@hdcompany123/laravel-5-7-and-json-web-tokens-tymon-jwt-auth-d5af05c0659a
+        if($exception instanceof TokenExpiredException  ){
+            return response()->json('Token is Expired');
+        }elseif($exception instanceof TokenInvalidException  ){
+        return response()->json('Token is Invalid');
+         }elseif($exception instanceof JWTException  ){
+        return response()->json('Token is Invalid');
+         }elseif($exception instanceof \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException){
+            return response()->json([$exception->getMessage()], $exception->getStatusCode());
+        }
         return parent::render($request, $exception);
     }
 }

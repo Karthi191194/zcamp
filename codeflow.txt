@@ -62,3 +62,8 @@ https://appdividend.com/2018/02/24/laravel-jwt-authentication-tutorial/
 5. register, login controller
 6. include route middleware - kernel.php
 7. routes in api.php
+//JWT Method 2
+exception inculded
+https://jwt-auth.readthedocs.io
+auth('api') - add on methods of controller, since we have set "web" for default on config/auth.php
+rsponse()->json('TOKEN INVALID') - response as a JSON

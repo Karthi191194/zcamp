@@ -37,3 +37,19 @@ Route::post('jwtlogin', 'JWTLoginController@login');
 Route::middleware('jwt.auth')->get('users', function(Request $request) {
     return auth()->user();
 });
+
+//JWT Method 2
+//http://localhost/zcamp/public/api/auth/me
+Route::group([
+
+    'prefix' => 'auth'
+
+], function () {
+
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+    Route::post('payload', 'AuthController@payload');
+
+});
