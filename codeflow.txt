@@ -35,6 +35,7 @@ RELATIONSHIP
 
 *gallery
 - created model, migration, controller files files php artisan migrate -mcr
+- composer require intervention/image
 
 
 *custom facades

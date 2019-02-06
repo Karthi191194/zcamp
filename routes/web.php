@@ -75,3 +75,6 @@ Route::get('customfacadetest', function(){
 
 //SERVICE PROVIDER
 Route::get('numbers/{num}', 'ProjectsController@numbers')->middleware('auth.basic');
+
+//gallery
+Route::resource('gallery', 'GalleryController');
