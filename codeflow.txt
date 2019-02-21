@@ -37,6 +37,8 @@ RELATIONSHIP
 - created model, migration, controller files files php artisan migrate -mcr
 - composer require intervention/image
 
+*mail
+
 
 *custom facades
 eg:(default) cache::get()
